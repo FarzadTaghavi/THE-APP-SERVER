@@ -2,7 +2,7 @@ const Product = require("./models").product;
 const Order = require("./models").order;
 const User = require("./models").user;
 
-/* const someQuery = async () => {
+const someQuery = async () => {
   try {
     const order = await Order.findByPk(1, {
       include: [Product],
@@ -13,9 +13,9 @@ const User = require("./models").user;
   }
 };
 
-someQuery(); */
+someQuery();
 
-const getAllOrders = async () => {
+/* const getAllOrders = async () => {
   try {
     const orders = await Order.findAll();
     console.log(orders);
@@ -24,7 +24,7 @@ const getAllOrders = async () => {
   }
 };
 
-getAllOrders();
+getAllOrders(); */
 
 // get user(s)
 // get storeCategory
