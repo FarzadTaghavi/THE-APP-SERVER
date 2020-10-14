@@ -7,6 +7,7 @@ const typeDefs = gql`
 
     orders: [Order]
     orderById(id: Int!): Order
+    allOrdersByUserId(id: Int!): [Order]
 
     products: [Product]
 
@@ -22,6 +23,8 @@ const typeDefs = gql`
     storeById(id: Int!): Store
     storesByTypeId(id: Int!): [Store]
     productsByStoreId(id: Int!): [Product]
+
+    checkToken: User
   }
 
   type User {
@@ -67,6 +70,22 @@ const typeDefs = gql`
     longitude: Int!
     latitude: Int!
     storeTypeId: ID!
+  }
+
+  type Login {
+    token: String!
+    user: User!
+  }
+
+  type Mutation {
+    signup(
+      fullName: String!
+      email: String!
+      password: String!
+      phoneNumber: Int!
+    ): Login!
+
+    login(email: String!, password: String!): Login!
   }
 `;
 
